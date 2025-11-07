@@ -2,7 +2,7 @@ import { Play, Quote, Star } from 'lucide-react'
 import { useState } from 'react'
 
 const VideoTestimonial2 = () => {
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying] = useState(true)
 
   // Segundo vídeo: use um link EMBED ou deixe vazio para usar o arquivo local
   const videoUrl: string = '' // Ex: https://www.youtube.com/embed/VIDEO_ID

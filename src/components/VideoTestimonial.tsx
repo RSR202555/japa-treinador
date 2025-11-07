@@ -2,7 +2,7 @@ import { Play, Quote, Star } from 'lucide-react'
 import { useState } from 'react'
 
 const VideoTestimonial = () => {
-  const [isPlaying, setIsPlaying] = useState(true)
+  const [isPlaying] = useState(true)
 
   // Adicione o link do seu vídeo do YouTube/Instagram/Vimeo (formato EMBED). Se vazio, usa arquivo local.
   const videoUrl: string = '' // Ex: https://www.youtube.com/embed/VIDEO_ID
