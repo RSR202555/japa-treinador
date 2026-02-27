@@ -7,9 +7,6 @@ interface HeaderProps {
 
 const Header = ({ scrolled }: HeaderProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const [logoOk, setLogoOk] = useState(true)
-  const [logoSrc, setLogoSrc] = useState('/images/logo.png')
-  const [triedAlt, setTriedAlt] = useState(false)
 
   const menuItems = [
     { label: 'Início', href: '#hero' },
@@ -39,23 +36,6 @@ const Header = ({ scrolled }: HeaderProps) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#hero" className="flex items-center gap-3" onClick={(e) => handleClick(e, '#hero')}>
-            {logoOk ? (
-              <img
-                src={logoSrc}
-                alt="Logo Japa Treinador"
-                className="h-14 w-auto md:h-16"
-                loading="eager"
-                decoding="async"
-                onError={() => {
-                  if (!triedAlt) { setLogoSrc('/images/logo.png.jfif'); setTriedAlt(true); }
-                  else { setLogoOk(false); }
-                }}
-              />
-            ) : (
-              <div className="h-14 w-14 md:h-16 md:w-16 rounded-md bg-white/20 ring-1 ring-white/40 grid place-items-center text-white font-bold">
-                J
-              </div>
-            )}
             <h1 className="text-2xl md:text-3xl font-bold text-white font-montserrat">
               Japa Treinador
             </h1>

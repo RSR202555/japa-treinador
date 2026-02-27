@@ -72,7 +72,7 @@ const OnlineCoaching = () => {
           <div className="order-1 md:order-2">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src="/images/working-photo.jpg" 
+                src="/images/working-photo.jpeg" 
                 alt="Consultoria Online - Japa Treinador" 
                 className="w-full h-full object-cover"
               />

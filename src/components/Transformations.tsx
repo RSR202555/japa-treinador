@@ -44,6 +44,12 @@ const Transformations = () => {
       testimonial: 'Transformei não só meu corpo, mas minha autoestima e qualidade de vida!',
       image: '/images/transformation-7.jpg',
     },
+    {
+      name: 'Transformação 8',
+      result: 'Transformação Real',
+      testimonial: 'Resultados reais com acompanhamento e consistência. Evolução visível!',
+      image: '/images/transformation-8.jpeg',
+    },
   ]
 
   return (

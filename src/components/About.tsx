@@ -1,6 +1,6 @@
 import { Award, Target, Users } from 'lucide-react'
 
-const About = () => {
+ const About = () => {
   return (
     <section id="sobre" className="py-20 bg-gradient-to-br from-primary via-accent to-primary">
       <div className="container mx-auto px-4">
@@ -10,7 +10,7 @@ const About = () => {
           <div className="relative">
             <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden shadow-2xl">
               <img 
-                src="/images/profile-photo.jpg" 
+                src="/images/profile-photo.jpeg" 
                 alt="Fabiano Vasconcelos Bispo (Japa) - Personal Trainer" 
                 className="w-full h-full object-cover"
               />

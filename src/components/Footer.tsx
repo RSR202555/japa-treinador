@@ -29,7 +29,7 @@ const Footer = () => {
                 loading="lazy"
                 decoding="async"
                 onError={() => {
-                  if (!triedAlt) { setLogoSrc('/images/logo.png'); setTriedAlt(true); }
+                  if (!triedAlt) { setLogoSrc('/images/logo.png.jfif'); setTriedAlt(true); }
                   else { setLogoOk(false); }
                 }}
               />
@@ -142,7 +142,7 @@ const Footer = () => {
                   loading="lazy"
                   decoding="async"
                   onError={() => {
-                    if (!triedAlt) { setLogoSrc('/images/logo.png'); setTriedAlt(true); }
+                    if (!triedAlt) { setLogoSrc('/images/logo.png.jfif'); setTriedAlt(true); }
                     else { setLogoOk(false); }
                   }}
                 />
