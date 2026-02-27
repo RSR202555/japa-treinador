@@ -46,7 +46,7 @@ const Transformations = () => {
     },
     {
       name: 'Transformação 8',
-      result: 'Transformação Real',
+      result: 'Evolução Total do Corpo',
       testimonial: 'Resultados reais com acompanhamento e consistência. Evolução visível!',
       image: '/images/transformation-8.jpeg',
     },
@@ -72,11 +72,11 @@ const Transformations = () => {
               className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
             >
               {/* Before/After Image */}
-              <div className="aspect-[4/3] bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden">
+              <div className="aspect-[3/4] bg-gradient-to-br from-primary/10 to-accent/10 overflow-hidden">
                 <img 
                   src={transformation.image} 
                   alt={`${transformation.name} - Antes e Depois`}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-500"
                 />
               </div>
 

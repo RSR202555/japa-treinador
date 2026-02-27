@@ -8,11 +8,11 @@ import { Award, Target, Users } from 'lucide-react'
           <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Image Column */}
           <div className="relative">
-            <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden shadow-2xl">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center overflow-hidden shadow-2xl">
               <img 
                 src="/images/profile-photo.jpeg" 
                 alt="Fabiano Vasconcelos Bispo (Japa) - Personal Trainer" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
             </div>
             {/* Floating Badge */}
