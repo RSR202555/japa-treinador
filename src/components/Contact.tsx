@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Phone, Mail, Instagram, Send } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,7 +11,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // PLACEHOLDER: Adicione seu número de WhatsApp aqui
     const whatsappNumber = '5575991155655'
     const message = encodeURIComponent(
       `Olá! Meu nome é ${formData.name}.\nEmail: ${formData.email}\n\nMensagem: ${formData.message}`
@@ -26,16 +26,40 @@ const Contact = () => {
   }
 
   return (
-    <section id="contato" className="py-20 bg-primary text-white">
-      <div className="container mx-auto px-4">
+    <section id="contato" className="relative py-20 bg-gradient-to-br from-[#070A13] via-[#0B1220] to-[#070A13] text-white overflow-hidden">
+      {/* Decorative Blur Blobs */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-primary/10 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-orange-500/5 blur-[130px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 font-montserrat">
-            Entre em Contato com a Japa Treinador
-          </h2>
-          <div className="w-20 h-1 bg-white mx-auto mb-6"></div>
-          <p className="text-white/90 text-lg max-w-2xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-3xl md:text-4xl font-bold mb-4 font-montserrat"
+          >
+            Entre em Contato
+          </motion.h2>
+          
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 80 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="h-1 bg-gradient-to-r from-orange-500 to-transparent mx-auto mb-6 rounded-full"
+          />
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="text-white/80 text-lg max-w-2xl mx-auto"
+          >
             Tire suas dúvidas e comece sua transformação hoje mesmo
-          </p>
+          </motion.p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -45,54 +69,74 @@ const Contact = () => {
             
             <div className="space-y-6">
               {/* WhatsApp */}
-              <a
+              <motion.a
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 href="https://wa.me/5575991155655"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300 group"
               >
-                <div className="p-3 bg-white/20 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-orange-500/10 border border-orange-500/20 text-orange-500 rounded-lg group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
                   <Phone size={24} />
                 </div>
                 <div>
                   <div className="font-semibold mb-1">WhatsApp</div>
-                  <div className="text-white/80">(75) 99115-5655</div>
+                  <div className="text-white/70 text-sm">(75) 99115-5655</div>
                 </div>
-              </a>
+              </motion.a>
 
               {/* Email */}
-              <div className="flex items-center gap-4 p-4 bg-white/10 rounded-xl">
-                <div className="p-3 bg-white/20 rounded-lg">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl"
+              >
+                <div className="p-3 bg-orange-500/10 border border-orange-500/20 text-orange-500 rounded-lg">
                   <Mail size={24} />
                 </div>
                 <div>
                   <div className="font-semibold mb-1">E-mail</div>
-                  <div className="text-white/80">Fabianogt260@gmail.com</div>
+                  <div className="text-white/70 text-sm">Fabianogt260@gmail.com</div>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Instagram */}
-              <a
+              <motion.a
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
                 href="https://instagram.com/japatreinador__"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-4 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 group"
+                className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 hover:border-orange-500/30 transition-all duration-300 group"
               >
-                <div className="p-3 bg-white/20 rounded-lg group-hover:scale-110 transition-transform">
+                <div className="p-3 bg-orange-500/10 border border-orange-500/20 text-orange-500 rounded-lg group-hover:scale-110 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
                   <Instagram size={24} />
                 </div>
                 <div>
                   <div className="font-semibold mb-1">Instagram</div>
-                  <div className="text-white/80">@japatreinador__</div>
+                  <div className="text-white/70 text-sm">@japatreinador__</div>
                 </div>
-              </a>
+              </motion.a>
             </div>
 
-            <div className="mt-8 p-6 bg-white/10 rounded-xl border-2 border-white/20">
-              <p className="text-white/90 leading-relaxed">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="mt-8 p-6 bg-orange-500/10 rounded-xl border border-orange-500/20"
+            >
+              <p className="text-white/90 leading-relaxed text-sm">
                 💬 <strong>Resposta rápida!</strong> Geralmente respondemos em até 1 hora durante o horário comercial.
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Contact Form */}
@@ -101,7 +145,7 @@ const Contact = () => {
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block mb-2 font-semibold">
+                <label htmlFor="name" className="block mb-2 font-semibold text-sm">
                   Nome Completo
                 </label>
                 <input
@@ -111,13 +155,13 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 focus:border-white focus:outline-none transition-colors text-white placeholder-white/50"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 focus:outline-none transition-all text-white placeholder-white/30 text-sm"
                   placeholder="Seu nome"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block mb-2 font-semibold">
+                <label htmlFor="email" className="block mb-2 font-semibold text-sm">
                   E-mail
                 </label>
                 <input
@@ -127,13 +171,13 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 focus:border-white focus:outline-none transition-colors text-white placeholder-white/50"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 focus:outline-none transition-all text-white placeholder-white/30 text-sm"
                   placeholder="seu@email.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block mb-2 font-semibold">
+                <label htmlFor="message" className="block mb-2 font-semibold text-sm">
                   Mensagem
                 </label>
                 <textarea
@@ -143,18 +187,20 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg bg-white/10 border-2 border-white/20 focus:border-white focus:outline-none transition-colors text-white placeholder-white/50 resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-orange-500 focus:ring-1 focus:ring-orange-500 focus:outline-none transition-all text-white placeholder-white/30 resize-none text-sm"
                   placeholder="Conte-me sobre seus objetivos..."
                 />
               </div>
 
-              <button
+              <motion.button
                 type="submit"
-                className="w-full bg-white text-primary px-8 py-4 rounded-lg hover:bg-white/90 transition-all duration-300 font-bold text-lg shadow-xl flex items-center justify-center gap-3 group"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-lg transition-all duration-300 font-extrabold text-lg shadow-xl shadow-orange-500/20 flex items-center justify-center gap-3 group border-none animate-pulse-glow"
               >
                 Enviar Mensagem
                 <Send className="group-hover:translate-x-1 transition-transform" size={20} />
-              </button>
+              </motion.button>
             </form>
           </div>
         </div>
